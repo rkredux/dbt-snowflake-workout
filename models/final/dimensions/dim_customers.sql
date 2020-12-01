@@ -13,7 +13,8 @@ SELECT
 customers.*, 
 co.first_order_date, 
 co.last_order_date, 
-COALESCE(co.total_orders, 0) as order_count
+COALESCE(co.total_orders, 0) as order_count, 
+COALESCE(co.life_time_value, 0) as lifetime_value
 FROM customers
 LEFT OUTER JOIN customer_orders co
 ON customers.id = co.customerid
